@@ -1,6 +1,9 @@
 const firstFactorElement = document.querySelector('#first-factor')
 const secondFactorElement = document.querySelector('#second-factor')
 const productInput = document.querySelector('#product')
+const errorElement = document.querySelector('#error')
+
+const errorMessage = 'Incorrect'
 
 let firstFactor = 0
 let secondFactor = 0
@@ -24,15 +27,23 @@ function generateNewEquation() {
 }
 
 productInput.addEventListener('keydown', (event) => {
+	hideError()
+	if (event.keyCode !== 13) return
+
 	let input = productInput.value
 
-	if (event.keyCode !== 13) return
-	if (!input) {
-		// TODO | indicate that the wrong answer was inputed
-		return
-	}
+	if (!input) return showError()
 
 	if (input == result) generateNewEquation()
+	else showError()
 })
+
+function showError() {
+	errorElement.innerHTML = errorMessage
+}
+
+function hideError() {
+	errorElement.innerHTML = ''
+}
 
 init()
