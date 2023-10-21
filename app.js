@@ -3,14 +3,13 @@ const secondFactorElement = document.querySelector('#second-factor')
 const productInput = document.querySelector('#product')
 const errorElement = document.querySelector('#error')
 
-const errorMessage = 'Incorrect'
-
 let firstFactor = 0
 let secondFactor = 0
 
 let result = 0
 
 function init() {
+	hideError()
 	generateNewEquation()
 }
 
@@ -39,11 +38,11 @@ productInput.addEventListener('keydown', (event) => {
 })
 
 function showError() {
-	errorElement.innerHTML = errorMessage
+	errorElement.style.opacity = 1
 }
 
 function hideError() {
-	errorElement.innerHTML = ''
+	errorElement.style.opacity = 0
 }
 
 init()
