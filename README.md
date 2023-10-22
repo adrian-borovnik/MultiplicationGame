@@ -1,4 +1,4 @@
 # MultiplicationGame
 Web-based game for learning the multiplication table.
 
-The equation contains factors in range form 1 to 10
+The equation contains factors in the range from 1 to 10
